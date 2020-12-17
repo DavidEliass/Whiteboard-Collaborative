@@ -1,5 +1,5 @@
 # Collaborative Whiteboard 
-![Logo](./.github/Logo.png)
+![Logo](https://github.com/DavidEliass/Whiteboard-Collaborative/blob/master/.github/assets/Logo.png)
 
 
 🎨 Desenhe junto com seus amigos utilizando nosso quadro branco
