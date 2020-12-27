@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const socket = io.connect();
+
   const tela = document.querySelector('#canvasDraw');
   const context = tela.getContext('2d');
 
@@ -13,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   tela.width = 1378;
   tela.height = 671;
 
-
-
-
-
   const drawLine = (line) => {
     context.beginPath();
     context.moveTo(line.posPrevious.x, line.posPrevious.y);
@@ -28,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   tela.onmousedown = (event) => { pen.active = true; };
   tela.onmouseup = (event) => { pen.active = false; };
 
-  tela.mouseleave = (event) => {pen.active = true}; 
+  tela.mouseleave = (event) => { pen.active = true; };
 
   tela.onmousemove = (event) => {
     pen.pos.x = event.offsetX;
@@ -36,9 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     pen.move = true;
   };
 
+  socket.on('draw', (line) => {
+    drawLine(line);
+  });
+
   const cycle = () => {
     if (pen.active && pen.move && pen.posPrevious) {
-      drawLine({ pos: pen.pos, posPrevious: pen.posPrevious });
+      socket.emit('draw', { pos: pen.pos, posPrevious: pen.posPrevious });
+      // drawLine({ pos: pen.pos, posPrevious: pen.posPrevious });
       pen.move = false;
     }
 
@@ -47,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(cycle, 10);
   };
 
+  // Limpar o Canvas
+
   cycle();
-  // drawLine({ pos: { x: 350, y: 250 }, posPrevious: { x: 10, y: 20 } });
+  ClearDraw();
 });

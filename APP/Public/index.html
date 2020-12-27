@@ -36,15 +36,12 @@
                 <li><button class="tool-btn"><i class="fas fa-eraser tool-icon"></i></button></li>
                 <li><button class="tool-btn"><i class="fas fa-fill-drip tool-icon"></i></button></li>
                 <li><button class="tool-btn"><i class="fas fa-font tool-icon "></i></button></li>
-                <li><button class="tool-btn"><i class="fas fa-trash tool-icon"></i></button></li>
+                <li onclick="ClearDraw()"><button class="tool-btn"><i class="fas fa-trash tool-icon"></i></button></li>
             </div>
 
             <canvas id="canvasDraw"></canvas>
         </div>
     </div>
 
-    <script>
-        const socket = io.connect()
-    </script>
 </body>
 </html>
