@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   tela.width = 1378;
   tela.height = 671;
 
+
+
+
+
   const drawLine = (line) => {
     context.beginPath();
     context.moveTo(line.posPrevious.x, line.posPrevious.y);
@@ -27,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tela.mouseleave = (event) => {pen.active = true}; 
 
   tela.onmousemove = (event) => {
-    pen.pos.x = event.clientX;
-    pen.pos.y = event.clientY;
+    pen.pos.x = event.offsetX;
+    pen.pos.y = event.offsetY;
     pen.move = true;
   };
 
