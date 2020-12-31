@@ -24,13 +24,13 @@
  - [x] Desenhar
  - [x] Apagar o desenho e começar do zero
  - [x] Desenho em Tempo Real com outras pessoas 
- - []  Contador de Pessoas conectadas na sala
- - []  Sistema de nomes
- - []  Sistema de Separação por Lobby/Salas
- - [] Escolher o tipo de Pincel
- - [] Utilizar a Borracha
- - [] Ferramenta de Textos
- - [] Funçaõ de CTRL + Z
+ - [ ]  Contador de Pessoas conectadas na sala
+ - [ ]  Sistema de nomes
+ - [ ]  Sistema de Separação por Lobby/Salas
+ - [ ] Escolher o tipo de Pincel
+ - [ ] Utilizar a Borracha
+ - [ ] Ferramenta de Textos
+ - [ ] Funçaõ de CTRL + Z
 
 
 
